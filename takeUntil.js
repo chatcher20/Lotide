@@ -62,4 +62,3 @@ console.log(results2);
 const data3 = [1, 2, 4, 8, 16, -1, -2, -3, -4];
 const results3 = takeUntil(data3, x => x < 0);
 console.log(results3);
-
