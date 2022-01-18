@@ -1,12 +1,26 @@
-const assertEqual = require('../assertEqual'); //two dots for going up one folder
-const head = require('../head'); //two dots for going up one folder
 
+const assert = require('chai').assert;
+const head   = require('../head');
 
-assertEqual(head([5,6,7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([5,6,7]), 20);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Goodbye");
-assertEqual(head([]), 5); //array with no elements should return undefined
-assertEqual(head([5]), 5); //array with just one element should return that element
+describe("#head", () => {
+  it("returns 1 for [1, 2, 3]", () => {
+    assert.strictEqual(head([1, 2, 3]), 1);
+  });
+  it('returns "5" for ["5"]', function() {
+    assert.strictEqual(head(["5"]), "5");
+  });
+  it('returns 5 for [5,6,7]', function () {
+    assert.strictEqual(head([5,6,7]), 5);
+  });
+  it('returns "Hello" for ["Hello", "Lighthouse", "Labs"]', function() {
+    assert.strictEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+  });
+  it('returns undefined for []', function() {
+    assert.strictEqual(head([]), undefined);
+  });
+  it("returns 5 for [5]", () => {
+    assert.strictEqual(head([5]), 5);
+  });
+});
 
 
