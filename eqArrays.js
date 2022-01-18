@@ -1,11 +1,4 @@
-
-
-
-
-
-
-
-
+const assertEqual = require('./assertEqual');  // one dot for same folder
 
 const eqArrays = function(arr1, arr2) {
 
@@ -21,31 +14,12 @@ const eqArrays = function(arr1, arr2) {
       return false
     }
   }
-
   return true
 };
 
-
-console.log(eqArrays([1, 2, 3], [1, 2, 3]), true);
-
-
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(` 😊  Assertion Passed: ${actual}! === ${expected}! `);
-  } else {
-    console.log(` 💥  Assertion Failed: ${actual}! !== ${expected}! `);
-  }
-};
-
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)); // => should PASS
+module.exports = eqArrays;
 
 
 
-/*
 
-console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.log(assertEqual(1, 1));
-console.log(assertEqual("Rocket", "Rocket"));
-console.log(assertEqual(1, 2));
 
-*/
