@@ -1,15 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
 // FUNCTION IMPLEMENTATION
 
 
@@ -20,15 +9,22 @@ const assertEqual = function(actual, expected) {
     console.log(` 💥  Assertion Failed: ${actual}! !== ${expected}! `);
   }
 };
+// Export the function
+module.exports = assertEqual;
 
-// TEST CODE
-
-console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.log(assertEqual(1, 1));
+// Notice how we are passing the variable assertEqual (which points to our function) and not calling assertEqual via assertEqual() here. This is an important distinction.
 
 
-console.log(assertEqual("Rocket", "Rocket"));
-console.log(assertEqual(1, 2));
+
+
+
+
+
+
+
+
+
+
 
 
 
