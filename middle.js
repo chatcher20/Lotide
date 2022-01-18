@@ -1,7 +1,7 @@
 
 
 const middle = function(array) {
-  const newArr = [];
+  let newArr = [];
   if (array.length <= 2) {
     return newArr;
   }
