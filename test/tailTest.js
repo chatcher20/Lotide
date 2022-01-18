@@ -1,26 +1,33 @@
-const assertEqual = require('../assertEqual'); //two dots for going up one folder
+
+const assert = require('chai').assert;
 const tail = require('../tail'); 
 
-// Test assertions:
+// Mocha and Chai test assertions
 
-const oldArray = [5, 7, 9];
-const newArray = tail(oldArray);
-assertEqual(newArray[0], 7);
-assertEqual(newArray[0], 9);
+describe("#tail", () => {
+  it("returns 9 for [5, 7, 9]", () => {
+    assert.deepEqual(tail([5, 7, 9]), [7, 9])
+  });
+  it('returns ["Blazers", "Rockets", "Hitmen"] for ["Rebels", "Blazers", "Rockets", "Hitmen"]', () => {
+    assert.deepEqual(tail(["Rebels", "Blazers", "Rockets", "Hitmen"]), ["Blazers", "Rockets", "Hitmen"])
+  });
+  it('returns [] for [3]', () => {
+    assert.deepEqual(tail([3]), [])
+  });
+});
 
-const oldArray2 = ["Rebels", "Blazers", "Rockets", "Hitmen"];
-const newArray2 = tail(oldArray2);
-assertEqual(newArray2[0], "Blazers");
-assertEqual(newArray2[0], "Rockets");
 
-const oldArray3 = [1];
-const newArray3 = tail(oldArray3);
-assertEqual(newArray3[0], "Chris rocks");
-assertEqual(newArray3[0], []);
 
-const oldArray4 = [];
-const newArray4 = tail(oldArray4);
-assertEqual(newArray4[0], "Chris rocks");
-assertEqual(newArray4[0], []);
 
+// Old test assertions:
+
+// const oldArray = [5, 7, 9];
+// const newArray = tail(oldArray);
+// assertEqual(newArray[0], 7);
+// assertEqual(newArray[0], 9);
+
+// const oldArray2 = ["Rebels", "Blazers", "Rockets", "Hitmen"];
+// const newArray2 = tail(oldArray2);
+// assertEqual(newArray2[0], "Blazers");
+// assertEqual(newArray2[0], "Rockets");
 
